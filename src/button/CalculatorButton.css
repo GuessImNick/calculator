@@ -1,0 +1,18 @@
+.calculatorButton {
+    width: 100px;
+    height: 100px;
+    font-size: 32px;
+    border: none;
+    flex-basis: 25%;
+    cursor: pointer;
+}
+
+.dark {
+    background-color: #333;
+    color: white;
+}
+
+.orange {
+    background-color: orange;
+    color: white;
+}

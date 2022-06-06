@@ -1,0 +1,5 @@
+.buttonGroup {
+    display: flex;
+    flex-flow: row wrap;
+    width: 400px;
+}

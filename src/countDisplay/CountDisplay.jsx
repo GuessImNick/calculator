@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import './CountDisplay.css';
 
-export const CountDisplay = () => {
+export const CountDisplay = ({count, tempCount}) => {
   return (
-    <div>CountDisplay</div>
+    <div className='countDisplay'><p className='count'>{tempCount ? tempCount : count}</p></div>
   )
 }

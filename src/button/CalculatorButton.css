@@ -12,7 +12,25 @@
     color: white;
 }
 
+.dark:hover {
+    background-color: #3d3d3d;
+}
+
 .orange {
-    background-color: orange;
+    background-color: #ff9500;
     color: white;
+}
+
+.orange:hover {
+    background-color: #ff9d14;
+}
+
+.active {
+    background-color: #fff;
+    color: #ff9500;
+}
+
+.active:hover {
+    background-color: #fff;
+    color: #ff9500;
 }

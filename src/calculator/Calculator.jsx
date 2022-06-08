@@ -7,23 +7,36 @@ const Calculator = () => {
   const [count, setCount] = useState("0");
   const [tempCount, setTempCount] = useState("");
   const [operator, setOperator] = useState("");
+  const operatorArr = ["/", "*", "-", "+"];
 
   const clickHandler = (char) => {
-    const operatorArr = ["/", "*", "-", "+"];
     if (char === "AC") {
       setCount("0");
       setTempCount("");
       setOperator("");
     } else if (char === "=") {
       if (tempCount && operator) {
-        setCount((prev) => {
-          const equation = `${prev}${operator}${tempCount}`;
-          return eval(equation).toString();
-        });
+        if (operator === "/") {
+          setCount((prev) => {
+            return parseInt(prev) / parseInt(tempCount);
+          });
+        } else if (operator === "-") {
+          setCount((prev) => {
+            return parseInt(prev) - parseInt(tempCount);
+          });
+        } else if (operator === "+") {
+          setCount((prev) => {
+            return parseInt(prev) + parseInt(tempCount);
+          });
+        } else if (operator === "*") {
+          setCount((prev) => {
+            return parseInt(prev) * parseInt(tempCount);
+          });
+        }
         setTempCount("");
         setOperator("");
       }
-    } else if (operatorArr.find((item) => char === item)) {
+    } else if (operatorArr.includes(char)) {
       setOperator(char);
       if (count === "0") {
         if (tempCount === "") {
@@ -35,10 +48,23 @@ const Calculator = () => {
         }
       } else if (operator) {
         if (tempCount) {
-          setCount((prev) => {
-            const equation = `${prev}${operator}${tempCount}`;
-            return eval(equation).toString();
-          });
+          if (operator === "/") {
+            setCount((prev) => {
+              return parseInt(prev) / parseInt(tempCount);
+            });
+          } else if (operator === "-") {
+            setCount((prev) => {
+              return parseInt(prev) - parseInt(tempCount);
+            });
+          } else if (operator === "+") {
+            setCount((prev) => {
+              return parseInt(prev) + parseInt(tempCount);
+            });
+          } else if (operator === "*") {
+            setCount((prev) => {
+              return parseInt(prev) * parseInt(tempCount);
+            });
+          }
           setTempCount("");
         }
       }
